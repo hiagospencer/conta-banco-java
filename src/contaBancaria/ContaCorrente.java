@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ContaCorrente {
-
+    Scanner terminal = new Scanner(System.in).useLocale(Locale.US);
     Random numeroAgencia = new Random();
 
     String nome;
@@ -26,7 +26,6 @@ public class ContaCorrente {
    
     public void cadastrarConta(){
         System.out.println("Cadastrando conta");
-        Scanner terminal = new Scanner(System.in).useLocale(Locale.US);
 
         System.out.println("Digite seu Nome: ");
         this.nome = terminal.next().toUpperCase();
@@ -36,31 +35,28 @@ public class ContaCorrente {
     }
 
     public void depositar(){
-        Scanner terminal = new Scanner(System.in).useLocale(Locale.US);
-
         System.out.println("Qual o valor do deposito? ");
         double valorDeposito = terminal.nextDouble();
         this.saldo += valorDeposito;
-        System.out.println("Deposito no valor de " + valorDeposito + " realizado com sucesso!");
+        System.out.println("Deposito no valor de R$ " + valorDeposito + " realizado com sucesso!");
         consultarSaldo();
     }
 
     public void sacar(){
-        Scanner terminal = new Scanner(System.in).useLocale(Locale.US);
         System.out.println("Quanto deseja sacar? ");
         double valorSaque = terminal.nextDouble();
         this.saldo = this.saldo - valorSaque;
-        System.out.println("Saque de R$" + valorSaque + " realizado com sucesso");
+        System.out.println("Saque no valor de R$ " + valorSaque + " realizado com sucesso");
         consultarSaldo();
     }
 
     public void consultarSaldo(){
-        System.out.println("Saldo atual: R$" + this.saldo);
+        System.out.println("Saldo atual: R$ " + this.saldo);
     }
 
     public void dadosConta(){
         System.out.println("Consultando Dados da Conta");
-        System.out.println("Nome: " + this.nome);
+        System.out.println("NOME: " + this.nome);
         System.out.println("AGÊNCIA: " + this.AGENCIA);
         System.out.println("SALDO: " + this.saldo);
     }
