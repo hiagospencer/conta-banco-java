@@ -1,0 +1,14 @@
+Atributos
+    - nome
+    - cpf
+    - agencia
+    - numero da conta
+    - saldo
+
+metodos
+    - cadastrar conta
+    - consultar saldo
+    - depositar
+    - sacar
+    - dados da conta
+
